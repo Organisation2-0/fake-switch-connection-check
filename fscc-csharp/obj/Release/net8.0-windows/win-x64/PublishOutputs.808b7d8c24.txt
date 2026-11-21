@@ -1,0 +1,2 @@
+D:\SI\projects\fake-switch-connection-check\release\fscc.pdb
+D:\SI\projects\fake-switch-connection-check\release\fscc.exe

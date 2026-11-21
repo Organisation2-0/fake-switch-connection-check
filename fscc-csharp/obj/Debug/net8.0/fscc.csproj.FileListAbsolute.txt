@@ -1,0 +1,14 @@
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.GeneratedMSBuildEditorConfig.editorconfig
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.AssemblyInfoInputs.cache
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.AssemblyInfo.cs
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.csproj.CoreCompileInputs.cache
+D:\SI\projects\fscc-csharp\bin\Debug\net8.0\fscc.exe
+D:\SI\projects\fscc-csharp\bin\Debug\net8.0\fscc.deps.json
+D:\SI\projects\fscc-csharp\bin\Debug\net8.0\fscc.runtimeconfig.json
+D:\SI\projects\fscc-csharp\bin\Debug\net8.0\fscc.dll
+D:\SI\projects\fscc-csharp\bin\Debug\net8.0\fscc.pdb
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.dll
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\refint\fscc.dll
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.pdb
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\fscc.genruntimeconfig.cache
+D:\SI\projects\fscc-csharp\obj\Debug\net8.0\ref\fscc.dll

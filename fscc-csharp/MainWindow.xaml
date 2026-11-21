@@ -1,0 +1,126 @@
+<Window x:Class="Fscc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FSCC - Fake Switch Connection Check"
+        Icon="AppIcon.ico"
+        Width="750" Height="600"
+        MinWidth="500" MinHeight="450"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E" Foreground="#CCCCCC">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="ActiveBrush" Color="#00E676"/>
+        <SolidColorBrush x:Key="InactiveBrush" Color="#3E3E42"/>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0" Text="Nintendo Switch  –  Connection Check Server"
+                   FontSize="20" FontWeight="Bold" Margin="0,0,0,12"
+                   Foreground="#4EC9B0"/>
+
+        <!-- Adapter selection -->
+        <StackPanel Grid.Row="1" Margin="0,0,0,12">
+            <TextBlock Text="Network Adapter:" FontWeight="SemiBold" Margin="0,0,0,4"/>
+            <ComboBox x:Name="AdapterCombo" Height="30" FontSize="13"
+                      DisplayMemberPath="DisplayName" SelectedValuePath="Address"/>
+        </StackPanel>
+
+        <!-- Status + Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,12">
+            <TextBlock x:Name="StatusText" Text="Status: Stopped"
+                       FontWeight="SemiBold" Margin="0,0,24,0"
+                       VerticalAlignment="Center"/>
+            <Button x:Name="StartBtn" Content="▶ Start" Width="90" Height="30"
+                    FontSize="13" Margin="0,0,8,0" Click="StartBtn_Click"/>
+            <Button x:Name="StopBtn" Content="⏹ Stop" Width="90" Height="30"
+                    FontSize="13" Click="StopBtn_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <!-- Animation + Log -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Connection indicator -->
+            <Border Grid.Column="0" Background="#2D2D30" BorderBrush="#3E3E42" BorderThickness="1"
+                    CornerRadius="8" Padding="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Pulsing ring -->
+                    <Ellipse x:Name="ConnectionRing" Width="120" Height="120" Grid.Row="0"
+                             Stroke="{StaticResource InactiveBrush}" StrokeThickness="8"
+                             HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                                <GradientStop Color="#1E1E1E" Offset="0"/>
+                                <GradientStop Color="#2D2D30" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                        <Ellipse.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+                    <!-- Text over the ring -->
+                    <TextBlock x:Name="ConnectionText" Grid.Row="0"
+                               Text="Waiting" FontSize="16" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Foreground="#888888"/>
+
+                    <!-- Status text -->
+                    <TextBlock x:Name="ConnectionStatus" Grid.Row="1"
+                               Text="No connection" FontSize="12"
+                               HorizontalAlignment="Center" Margin="0,12,0,0"
+                               Foreground="#888888"/>
+                </Grid>
+            </Border>
+
+            <!-- Log window -->
+            <Grid Grid.Column="1" Margin="12,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Log:" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                <ScrollViewer Grid.Row="1" x:Name="LogScroll" VerticalScrollBarVisibility="Auto"
+                              Background="#2D2D30" BorderBrush="#3E3E42" BorderThickness="1"
+                              Padding="4">
+                    <ItemsControl x:Name="LogList">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" FontFamily="Consolas" FontSize="12"
+                                           Margin="2,1" Foreground="#D4D4D4"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+
+        <!-- Info bar -->
+        <TextBlock Grid.Row="4" Text="DNS Port 53  |  HTTP Port 80"
+                   FontSize="11" Foreground="#888888" Margin="0,8,0,0"
+                   HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
