@@ -49,6 +49,8 @@ Select the number corresponding to the local network adapter connected to your o
 3. Set **DNS Settings** to **Manual**.
 4. Enter the IP address displayed by `fscc.js` for both **Primary DNS** and **Secondary DNS**.
 5. Save and select **Connect to this Network**.
+<img width="1367" height="691" alt="image" src="https://github.com/user-attachments/assets/451472b8-f42b-4f33-afb8-0b3a6b14f68d" />
+
 
 ---
 
@@ -99,6 +101,8 @@ dist\fscc.exe
 
 #### 3. Configure Your Console
 Same as the JavaScript version — set your console's DNS to the IP shown in the application.
+<img width="916" height="736" alt="image" src="https://github.com/user-attachments/assets/0f5e998d-d653-4d9d-afa5-c3a9e7f997d8" />
+
 
 ---
 
