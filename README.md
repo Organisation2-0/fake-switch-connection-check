@@ -1,4 +1,7 @@
-# Fake Nintendo Connection Check (Local DNS & HTTP Server)
+<img width="256" height="256" alt="Gemini_Generated_Image_z92y5yz92y5yz92y-removebg-preview(1)" src="https://github.com/user-attachments/assets/dedb9796-e514-44bc-80d9-771fa79710a5" />
+
+
+# Fake Switch Connection Check (Local DNS & HTTP Server)
 
 A lightweight tool that simulates Nintendo's internet connectivity check (`ctest` / `conntest`) locally while blocking all other external domains (`NXDOMAIN`).
 
